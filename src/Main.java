@@ -1,5 +1,7 @@
 import java.io.*;
 import java.lang.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.zip.*;
 import javax.crypto.Cipher;
@@ -15,14 +17,37 @@ public class Main {
         String fileName = "src/input.txt";
         String output = "src/output.txt";
         File file = new File(fileName);
-
         Scanner sc = new Scanner(file);
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите \"1\" если хотите прочитать txt файл\n" +
+                "Введите \"2\" если хотите прочитать xml файл\n" +
+                "Введите \"3\" если хотите прочитать json файл\n" +
+                "Введите \"4\" если хотите заархивировать файл исопльзуя Zip\n" +
+                "Введите \"5\" если хотите заархивировать файл используя Rar\n" +
+                "Введите \"6\" если хотите зашифровать файл с помощью AES\n" +
+                "Введите \"7\" если хотите расшифровать файл с помощью AES\n");
+        int a = in.nextInt();
+        if (a == 1){
+            System.out.println("Введите имя файла\n");
+            String fnametxt = in.nextLine();
+            String content;
+            try (BufferedReader rreader = new BufferedReader(new FileReader(fnametxt)))  {
+                content = rreader.readLine();
+            }
+            System.out.println(content);
+        }
         try {
             KeyGenerator keygenerator = KeyGenerator.getInstance("AES");
             SecretKey AESKey = keygenerator.generateKey();
 
             Cipher aCipher;
             aCipher = Cipher.getInstance("AES");
+
+            byte[] buffer = new byte[reader.available()];
+            reader.read(buffer, 0, buffer.length);
+
+            aCipher.init(Cipher.ENCRYPT_MODE, AESKey);
+            byte[] textEncrypted = aCipher.doFinal(buffer);
 
             String s = new String(textEncrypted);
             System.out.println(s);
@@ -35,9 +60,10 @@ public class Main {
         }
         catch(Exception e) {
             System.out.println("hi");
+
         }
-        try (sc) {
-            while(sc.hasNext()) {
+//        try (sc) {
+//            while(sc.hasNext()) {
 //                String line = sc.nextLine();
 //                var lst = line.split("^[(]?[-]?([0-9]+)[)]??([(]?([-+/*]([0-9]))?([.,][0-9]+)?[)]?)*$");
 //
@@ -62,60 +88,34 @@ public class Main {
 //                    writer.write('\n');
 //
 //                }
-            }
-        }
-        catch (java.lang.ArrayIndexOutOfBoundsException sv) {
-            Scanner scs = new Scanner(file);
-            while (scs.hasNext()) {
-                String s = scs.nextLine();
-                KeyGenerator keygenerator = KeyGenerator.getInstance("AES");
-                SecretKey AESKey = keygenerator.generateKey();
+//            }
+//        }
+//        catch (java.lang.ArrayIndexOutOfBoundsException sv) {
+//            Scanner scs = new Scanner(file);
+//            while (scs.hasNext()) {
+//                String s = scs.nextLine();
+//                KeyGenerator keygenerator = KeyGenerator.getInstance("AES");
+//                SecretKey AESKey = keygenerator.generateKey();
+//
+//                Cipher aCipher;
+//                aCipher = Cipher.getInstance("AES");
+//                writer.write(line + "\n");
+//
+//                aCipher.init(Cipher.DECRYPT_MODE, AESKey);
+//                byte[] textDecrypted = aCipher.doFinal(textEncrypted);
+//
+//                s = new String(textDecrypted);
+//                System.out.println(s);
+//            }
+//        }
+//        writer.flush();
 
-                Cipher aCipher;
-                aCipher = Cipher.getInstance("AES");
-                writer.write(line + "\n");
-
-                aCipher.init(Cipher.DECRYPT_MODE, AESKey);
-                byte[] textDecrypted = aCipher.doFinal(textEncrypted);
-
-                s = new String(textDecrypted);
-                System.out.println(s);
-            }
-        }
-        writer.flush();
-
-        try {
-            KeyGenerator keygenerator = KeyGenerator.getInstance("AES");
-            SecretKey AESKey = keygenerator.generateKey();
-
-            Cipher aCipher;
-            aCipher = Cipher.getInstance("AES");
-
-            byte[] buffer = new byte[reader.available()];
-            reader.read(buffer, 0, buffer.length);
-
-            aCipher.init(Cipher.ENCRYPT_MODE, AESKey);
-            byte[] textEncrypted = aCipher.doFinal(buffer);
-
-            String s = new String(textEncrypted);
-            System.out.println(s);
-
-            aCipher.init(Cipher.DECRYPT_MODE, AESKey);
-            byte[] textDecrypted = aCipher.doFinal(textEncrypted);
-
-            s = new String(textDecrypted);
-            System.out.println(s);
-        }
-        catch(Exception e) {        {
-            System.out.println("Exception");
-        }
-
-            try(ZipOutputStream zout = new ZipOutputStream(new FileOutputStream("C:\\Users\\HP\\IdeaProjects\\untitled4\\outputz.zip")); FileInputStream fis= new FileInputStream(output)   )
-            {
-                ZipEntry entry1 = new ZipEntry(output);
-                zout.putNextEntry(entry1);
-                zout.closeEntry();
-            }
+        try(ZipOutputStream zout = new ZipOutputStream(new FileOutputStream("C:\\Users\\HP\\IdeaProjects\\untitled4\\outputz.zip")); FileInputStream fis= new FileInputStream(output)   )
+        {
+            ZipEntry entry1 = new ZipEntry(output);
+            zout.putNextEntry(entry1);
+            zout.closeEntry();
         }
     }
 }
+
