@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6f9f5e1-4db3-476a-91fa-9b614aa3d48e" name="Changes" comment="0.0">
+    <list default="true" id="c6f9f5e1-4db3-476a-91fa-9b614aa3d48e" name="Changes" comment="User Interface">
+      <change afterPath="$PROJECT_DIR$/src/ArifParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/XmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -26,14 +37,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/HP/IdeaProjects/untitled4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/IdeaProjects/untitled4&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,6 +55,15 @@
       <updated>1666246092934</updated>
       <workItem from="1666246094329" duration="124000" />
       <workItem from="1666246242653" duration="294000" />
+      <workItem from="1667202930785" duration="149000" />
+      <workItem from="1667205322210" duration="87000" />
+      <workItem from="1667453135457" duration="1443000" />
+      <workItem from="1667455597039" duration="595000" />
+      <workItem from="1667881120514" duration="9000" />
+      <workItem from="1667975804453" duration="347000" />
+      <workItem from="1669221190557" duration="3420000" />
+      <workItem from="1671775341149" duration="1392000" />
+      <workItem from="1671806292664" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="0.0">
       <created>1666246113658</created>
@@ -59,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666246267036</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="User Interface">
+      <created>1667202999556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667202999556</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.0" />
+    <MESSAGE value="User Interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Interface" />
   </component>
 </project>
