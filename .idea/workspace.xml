@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6f9f5e1-4db3-476a-91fa-9b614aa3d48e" name="Changes" comment="User Interface">
-      <change afterPath="$PROJECT_DIR$/src/ArifParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/XmlParser.java" afterDir="false" />
+    <list default="true" id="c6f9f5e1-4db3-476a-91fa-9b614aa3d48e" name="Changes" comment="XML and Arithmetic parser">
+      <change afterPath="$PROJECT_DIR$/src/XmlReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +60,7 @@
       <workItem from="1667975804453" duration="347000" />
       <workItem from="1669221190557" duration="3420000" />
       <workItem from="1671775341149" duration="1392000" />
-      <workItem from="1671806292664" duration="318000" />
+      <workItem from="1671806292664" duration="1506000" />
     </task>
     <task id="LOCAL-00001" summary="0.0">
       <created>1666246113658</created>
@@ -86,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667202999556</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="XML and Arithmetic parser">
+      <created>1671806693095</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671806693095</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.0" />
     <MESSAGE value="User Interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Interface" />
+    <MESSAGE value="XML and Arithmetic parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="XML and Arithmetic parser" />
   </component>
 </project>
