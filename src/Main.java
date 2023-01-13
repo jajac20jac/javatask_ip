@@ -1,12 +1,7 @@
 import java.io.*;
 import java.lang.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.zip.*;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -100,12 +95,12 @@ public class Main {
 //        }
 //        writer.flush();
 
-        try(ZipOutputStream zout = new ZipOutputStream(new FileOutputStream("C:\\Users\\HP\\IdeaProjects\\untitled4\\outputz.zip")); FileInputStream fis= new FileInputStream(output)   )
-        {
-            ZipEntry entry1 = new ZipEntry(output);
-            zout.putNextEntry(entry1);
-            zout.closeEntry();
-        }
+//        try(ZipOutputStream zout = new ZipOutputStream(new FileOutputStream("C:\\Users\\HP\\IdeaProjects\\untitled4\\outputz.zip")); FileInputStream fis= new FileInputStream(output)   )
+//        {
+//            ZipEntry entry1 = new ZipEntry(output);
+//            zout.putNextEntry(entry1);
+//            zout.closeEntry();
+//        }
     }
 }
 
