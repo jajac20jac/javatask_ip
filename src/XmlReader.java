@@ -3,10 +3,12 @@ import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 
 public class XmlReader {
@@ -52,16 +54,20 @@ public class XmlReader {
 
     private static void writeToXml(Document doc, String wayToFile) {
         try {
-            OutputStream fileOutputStream = new FileOutputStream(wayToFile);
-            TransformerFactory tFactory = TransformerFactory.newInstance();
-            Transformer transformer = tFactory.newTransformer();
-            DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(fileOutputStream);
-            transformer.transform(source, result);
-            fileOutputStream.close();
+            xmlwrite(doc, wayToFile);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    static void xmlwrite(Document doc, String wayToFile) throws TransformerException, IOException {
+        OutputStream fileOutputStream = new FileOutputStream(wayToFile);
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        Transformer transformer = tFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(fileOutputStream);
+        transformer.transform(source, result);
+        fileOutputStream.close();
     }
 }

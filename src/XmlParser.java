@@ -52,13 +52,7 @@ public class XmlParser {
             rootElement.appendChild(em);
         }
 
-        OutputStream fileOutputStream = new FileOutputStream(outputFileName);
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = tFactory.newTransformer();
-        DOMSource source = new DOMSource(document);
-        StreamResult result = new StreamResult(fileOutputStream);
-        transformer.transform(source, result);
-        fileOutputStream.close();
+        XmlReader.xmlwrite(document, outputFileName);
 
     }
 }
