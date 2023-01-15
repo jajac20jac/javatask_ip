@@ -5,12 +5,13 @@ import java.util.zip.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        FileInputStream reader = new FileInputStream("src/input.txt");
-        FileWriter writer = new FileWriter("src/output.txt");
-        String fileName = "src/input.txt";
-        String output = "src/output.txt";
+        String txtInput = "src/inputOutput/input.txt";
+        String txtOutput = "src/inputOutput/output.txt";
+        String xmlInput = "src/inputOutput/input.xml";
+        String xmlOutput = "src/inputOutput/output.xml";
+        String cipheredOutput = "src/inputOutput/cipheredOutput.txt";
+        String zipOutput = "src/inputOutput/output.zip";
 
-        Scanner sc = new Scanner(fileName);
         Scanner in = new Scanner(System.in);
         System.out.println("Введите \"1\" если хотите прочитать txt файл\n" +
                 "Введите \"2\" если хотите прочитать xml файл\n" +
@@ -20,7 +21,9 @@ public class Main {
                 "Введите \"6\" если хотите зашифровать файл с помощью AES\n" +
                 "Введите \"7\" если хотите расшифровать файл с помощью AES\n");
         int a = in.nextInt();
+        if (a == 1){
 
+        }
 //
 }}
 

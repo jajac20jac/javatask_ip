@@ -20,6 +20,10 @@ public class Encrypting {
         return;
     }
 
+    public static void decryptFile(String oldFile, String newFile) throws Exception {
+        encrypt(oldFile, newFile);
+    }
+    
     private static void encrypt(String oldFile, String newFile) throws IOException {
         FileInputStream in = new FileInputStream(oldFile);
         File file = new File(newFile);
@@ -43,7 +47,5 @@ public class Encrypting {
         out.close();
     }
 
-    public static void decryptFile(String oldFile, String newFile) throws Exception {
-        encrypt(oldFile, newFile);
-    }
+
 };
