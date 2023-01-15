@@ -1,4 +1,4 @@
-import org.jetbrains.annotations.NotNull;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,7 +11,7 @@ public class Encrypting {
     static private byte[] key_value = "6^)(9-p35@%3#4S!4S0)$Y%%^&5(j.&^&o(*0)$Y%!#O@*GpG@=+@j.&6^)(0-=+".getBytes();;
     public Encrypting() {};
 
-    public Encrypting(@NotNull String key) {
+    public Encrypting( String key) {
         key_value = key.getBytes();
     }
 

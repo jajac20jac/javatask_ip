@@ -10,9 +10,9 @@ public class Main {
         String xmlInput = "src/inputOutput/input.xml";
         String xmlOutput = "src/inputOutput/output.xml";
         String cipheredOutput = "src/inputOutput/cipheredOutput.txt";
-        String zipOutput = "src/inputOutput/output.zip";
-
+        String zipOutput = "src/inputOutput/outputz.zip";
         Scanner in = new Scanner(System.in);
+        String temp;
         System.out.println("Введите \"1\" если хотите прочитать txt файл\n" +
                 "Введите \"2\" если хотите прочитать xml файл\n" +
                 "Введите \"3\" если хотите прочитать json файл\n" +
@@ -22,6 +22,19 @@ public class Main {
                 "Введите \"7\" если хотите расшифровать файл с помощью AES\n");
         int a = in.nextInt();
         if (a == 1){
+            TxtParser ptx = new TxtParser(txtInput, txtOutput);
+            temp = ptx.ReadFromFile();
+        }
+        if (a == 2){
+
+        }
+        if (a == 3){
+
+        }
+        if (a == 4){
+            System.out.println("Введите ");
+        }
+        if (a == 5){
 
         }
 //

@@ -15,6 +15,37 @@ public class ArifParser {
         else return 0;
     }
 
+    public static java.lang.Double ArifParserToAnswer() throws java.io.IOException {
+        String ArifParser = ExpressionToArifParser();
+        String operand = new String();
+        Stack<Double> stack_ = new Stack<Double>();
+        for (int i = 0 ;i < ArifParser.length(); i++) {
+
+            if (ArifParser.charAt(i) == ' ') {
+                continue;
+            }
+            if (GetPriority(ArifParser.charAt(i)) == 0) {
+                while (ArifParser.charAt(i) != ' ' && GetPriority(ArifParser.charAt(i)) == 0) {
+                    operand += ArifParser.charAt(i++);
+                    if (i == ArifParser.length()) {
+                        i--;
+                        break;
+                    }
+                }
+                stack_.push(Double.parseDouble(operand));
+                operand = new String();
+            }
+            if (GetPriority(ArifParser.charAt(i)) > 1) {
+                double a = stack_.pop();
+                double b = stack_.pop();
+                if (ArifParser.charAt(i) == '+') stack_.push( b + a);
+                if (ArifParser.charAt(i) == '-') stack_.push(b - a);
+                if (ArifParser.charAt(i) == '*') stack_.push(b * a);
+                if (ArifParser.charAt(i) == '/') stack_.push(b / a);
+            }
+        }
+        return stack_.pop();
+    }
     public static java.lang.String ExpressionToArifParser() throws java.io.IOException {
         String expr = expression;
         String current = "";
@@ -55,36 +86,5 @@ public class ArifParser {
         }
 
         return current;
-    }
-    public static java.lang.Double ArifParserToAnswer() throws java.io.IOException {
-        String ArifParser = ExpressionToArifParser();
-        String operand = new String();
-        Stack<Double> stack_ = new Stack<Double>();
-        for (int i = 0 ;i < ArifParser.length(); i++) {
-
-            if (ArifParser.charAt(i) == ' ') {
-                continue;
-            }
-            if (GetPriority(ArifParser.charAt(i)) == 0) {
-                while (ArifParser.charAt(i) != ' ' && GetPriority(ArifParser.charAt(i)) == 0) {
-                    operand += ArifParser.charAt(i++);
-                    if (i == ArifParser.length()) {
-                        i--;
-                        break;
-                    }
-                }
-                stack_.push(Double.parseDouble(operand));
-                operand = new String();
-            }
-            if (GetPriority(ArifParser.charAt(i)) > 1) {
-                double a = stack_.pop();
-                double b = stack_.pop();
-                if (ArifParser.charAt(i) == '+') stack_.push( b + a);
-                if (ArifParser.charAt(i) == '-') stack_.push(b - a);
-                if (ArifParser.charAt(i) == '*') stack_.push(b * a);
-                if (ArifParser.charAt(i) == '/') stack_.push(b / a);
-            }
-        }
-        return stack_.pop();
     }
 }

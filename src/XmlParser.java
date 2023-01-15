@@ -13,7 +13,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-public class XmlParser {
+public class XmlParser  {
     private static String inputFileName;
     private static String outputFileName;
 
