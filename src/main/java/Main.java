@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.lang.*;
 import java.util.Scanner;
@@ -5,12 +6,12 @@ import java.util.zip.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String txtInput = "src/inputOutput/input.txt";
-        String txtOutput = "src/inputOutput/output.txt";
-        String xmlInput = "src/inputOutput/input.xml";
-        String xmlOutput = "src/inputOutput/output.xml";
-        String cipheredOutput = "src/inputOutput/cipheredOutput.txt";
-        String zipOutput = "src/inputOutput/outputz.zip";
+        String txtInput = "src/main/java/inputOutput/input.txt";
+        String txtOutput = "src/main/java/inputOutput/output.txt";
+        String xmlInput = "src/main/java/inputOutput/input.xml";
+        String xmlOutput = "src/main/java/inputOutput/output.xml";
+        String cipheredOutput = "src/main/java/inputOutput/cipheredOutput.txt";
+        String zipOutput = "src/main/java/inputOutput/outputz.zip";
         Scanner in = new Scanner(System.in);
         String temp;
         System.out.println("Введите \"1\" если хотите прочитать txt файл\n" +
