@@ -5,39 +5,32 @@ import java.util.Scanner;
 import java.util.zip.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         String txtInput = "src/main/java/inputOutput/input.txt";
         String txtOutput = "src/main/java/inputOutput/output.txt";
         String xmlInput = "src/main/java/inputOutput/input.xml";
         String xmlOutput = "src/main/java/inputOutput/output.xml";
         String cipheredOutput = "src/main/java/inputOutput/cipheredOutput.txt";
-        String zipOutput = "src/main/java/inputOutput/outputz.zip";
+        String decipheredOutput = "decipheredOutput.txt";
+        String zipOutput = "src/main/java/inputOutput/outputzip.zip";
         Scanner in = new Scanner(System.in);
         String temp;
-        System.out.println("Введите \"1\" если хотите прочитать txt файл\n" +
-                "Введите \"2\" если хотите прочитать xml файл\n" +
-                "Введите \"3\" если хотите прочитать json файл\n" +
-                "Введите \"4\" если хотите заархивировать файл исопльзуя Zip\n" +
-                "Введите \"5\" если хотите заархивировать файл используя Rar\n" +
-                "Введите \"6\" если хотите зашифровать файл с помощью AES\n" +
-                "Введите \"7\" если хотите расшифровать файл с помощью AES\n");
-        int a = in.nextInt();
-        if (a == 1){
-            TxtParser ptx = new TxtParser(txtInput, txtOutput);
-            temp = ptx.ReadFromFile();
-        }
-        if (a == 2){
+            TxtParser txtp = new TxtParser(txtInput, txtOutput);
+            txtp.WriteToFile();
 
-        }
-        if (a == 3){
+        String wayName = "src/main/java/inputOutput/outputz.zip";
+        Archiving arch = new Archiving();
+        arch.zipFile(txtInput, wayName);
+        arch.unzipFile(wayName, zipOutput);
 
-        }
-        if (a == 4){
-            System.out.println("Введите ");
-        }
-        if (a == 5){
 
-        }
+
+        Encrypting encr = new Encrypting();
+        encr.encryptFile(txtOutput, cipheredOutput);
+        encr.decryptFile(cipheredOutput, decipheredOutput);
+
+        XmlParser xl = new XmlParser(xmlInput, xmlOutput);
+        xl.WriteXML();
 //
 }}
 
